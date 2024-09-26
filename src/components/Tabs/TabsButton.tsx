@@ -14,7 +14,7 @@ export const TabsButton: React.FC<TabsButtonProps> = ({ children, index }) => {
 		<button
 			type="button"
 			role="tab"
-			aria-selected={activeTab === index}
+			aria-selected={activeTab === index ? "true" : "false"}
 			aria-controls={`tabpanel-${tabsId}-${index}`}
 			id={`tab-${tabsId}-${index}`}
 			onClick={() => setActiveTab(index)}

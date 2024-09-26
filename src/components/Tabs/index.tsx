@@ -39,7 +39,7 @@ const Tabs: React.FC<TabsProps> & {
 		<TabsContext.Provider
 			value={{ activeTab, setActiveTab, tabsId: tabsId.current }}
 		>
-			<root.div>
+			<root.div data-testid="shadow-root">
 				<div className="tabs">
 					{validChildren}
 					<style type="text/css">{styles}</style>
