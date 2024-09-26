@@ -3,6 +3,7 @@ import { createContext, useContext } from "react";
 interface TabsContextType {
 	activeTab: number;
 	setActiveTab: (index: number) => void;
+	tabsId: string;
 }
 
 export const TabsContext = createContext<TabsContextType | undefined>(

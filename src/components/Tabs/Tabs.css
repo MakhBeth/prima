@@ -1,0 +1,41 @@
+.tabs {
+	/* Your tabs styles here */
+}
+
+.tab-list {
+	/* Your tab list styles here */
+}
+
+.tab-button {
+	/* Your tab button styles here */
+}
+
+.tab-panel {
+	/* Your tab panel styles here */
+}
+
+.badge {
+	/* Your badge styles here */
+}
+
+/* Add variant classes */
+.underline {
+	/* Underline variant styles */
+}
+
+.pill {
+	/* Pill variant styles */
+}
+
+/* Add badge variant classes */
+.positive {
+	/* Positive badge styles */
+}
+
+.negative {
+	/* Negative badge styles */
+}
+
+.neutral {
+	/* Neutral badge styles */
+}

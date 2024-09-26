@@ -8,15 +8,15 @@ interface TabsButtonProps {
 }
 
 export const TabsButton: React.FC<TabsButtonProps> = ({ children, index }) => {
-	const { activeTab, setActiveTab } = useTabsContext();
+	const { activeTab, setActiveTab, tabsId } = useTabsContext();
 
 	return (
 		<button
 			type="button"
 			role="tab"
 			aria-selected={activeTab === index}
-			aria-controls={`tabpanel-${index}`}
-			id={`tab-${index}`}
+			aria-controls={`tabpanel-${tabsId}-${index}`}
+			id={`tab-${tabsId}-${index}`}
 			onClick={() => setActiveTab(index)}
 		>
 			{React.Children.map(children, (child) => {

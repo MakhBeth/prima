@@ -1,5 +1,3 @@
-import React from "react";
-
 interface TabsBadgeProps {
 	children: React.ReactNode;
 	variant?: "negative" | "positive" | "neutral";
