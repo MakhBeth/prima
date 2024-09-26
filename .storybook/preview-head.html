@@ -1,0 +1,22 @@
+<style>
+  :root {
+    color-scheme: light dark;
+    --c-light: #eee;
+    --c-dark: #111;
+  }
+
+  body {
+    background-color: light-dark(var(--c-light), var(--c-dark));
+    display: grid;
+    margin: 0;
+    place-content: center;
+  }
+
+  body.dark-theme {
+    color-scheme: dark;
+  }
+
+  body.light-theme {
+    color-scheme: light;
+  }
+</style>

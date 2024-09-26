@@ -1,14 +1,22 @@
 :root {
-  color-scheme: light dark;
-  --c-light: #eee;
-  --c-dark: #111;
+	color-scheme: light dark;
+	--c-light: #eee;
+	--c-dark: #111;
 }
 
 body {
-  background-color: light-dark(var(--c-light), var(--c-dark));
-  display: grid;
-  font-size: 2rem;
-  margin: 0;
-  min-height: 100vh;
-  place-content: center;
+	background-color: light-dark(var(--c-light), var(--c-dark));
+	display: grid;
+	font-size: 2rem;
+	margin: 0;
+	min-height: 100vh;
+	place-content: center;
+}
+
+body.dark-theme {
+	color-scheme: dark;
+}
+
+body.light-theme {
+	color-scheme: light;
 }
