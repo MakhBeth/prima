@@ -21,6 +21,7 @@ const preview: Preview = {
 				dark: "dark-theme",
 			},
 			defaultTheme: "light",
+			parentSelector: "body",
 		}),
 	],
 };
