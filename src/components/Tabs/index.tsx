@@ -5,7 +5,7 @@ import { TabsButton } from "./TabsButton";
 import { TabsPanel } from "./TabsPanel";
 import { TabsBadge } from "./TabsBadge";
 import { TabsContext } from "./TabsContext";
-import styles from "./Tabs.css?inline"; // Import CSS as a string
+import styles from "./styles/Tabs.css?inline"; // Import CSS as a string
 import root from "react-shadow";
 
 interface TabsProps {

@@ -1,0 +1,26 @@
+.tabs-badge {
+	color: var(--text-neutral);
+	display: inline-block;
+	font-size: var(--font-size-xs);
+	font-weight: 700;
+	padding: var(--spacing-4xs) var(--spacing-3xs);
+	line-height: var(--line-height-base);
+	border-radius: var(--dimension-2xs);
+
+	@media (min-width: 768px) {
+		border-radius: var(--dimension-xs);
+		padding: var(--spacing-3xs) var(--spacing-2xs);
+	}
+
+	&.neutral {
+		background-color: var(--badge-neutral);
+	}
+
+	&.negative {
+		background-color: var(--badge-negative);
+	}
+
+	&.positive {
+		background-color: var(--badge-positive);
+	}
+}

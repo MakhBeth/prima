@@ -37,8 +37,12 @@ export const WithBadges: Story = {
 	render: (args) => (
 		<Tabs>
 			<Tabs.List variant={args.variant}>
-				<Tabs.Button index={0}>Tab 1</Tabs.Button>
-				<Tabs.Button index={1}>Tab 2</Tabs.Button>
+				<Tabs.Button index={0}>
+					Tab 1<Tabs.Badge variant="neutral">neutral</Tabs.Badge>
+				</Tabs.Button>
+				<Tabs.Button index={1}>
+					Tab 2<Tabs.Badge variant="negative">negative</Tabs.Badge>
+				</Tabs.Button>
 				<Tabs.Button index={2}>
 					Tab 3<Tabs.Badge variant="positive">positive</Tabs.Badge>
 				</Tabs.Button>

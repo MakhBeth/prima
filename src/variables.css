@@ -1,11 +1,38 @@
-:root {
+:root,
+:scope,
+:host {
 	--spacing-zero: 0;
 	--spacing-4xs: 2px;
-	--spacing-xxs: 4px;
-	--spacing-xs: 8px;
-	--spacing-sm: 12px;
-	--spacing-md: 16px;
+	--spacing-3xs: 4px;
+	--spacing-2xs: 8px;
+	--spacing-xs: 12px;
+	--spacing-sm: 16px;
+	--spacing-md: 20px;
 	--spacing-lg: 24px;
 	--spacing-xl: 32px;
 	--spacing-xxl: 48px;
+
+	--dimension-zero: 0;
+	--dimension-4xs: 2px;
+	--dimension-3xs: 4px;
+	--dimension-2xs: 8px;
+	--dimension-xs: 12px;
+	--dimension-sm: 16px;
+	--dimension-md: 20px;
+	--dimension-lg: 24px;
+	--dimension-xl: 32px;
+	--dimension-xxl: 48px;
+
+	--badge-negative: #ffbfb1;
+	--badge-positive: #b1ffc7;
+	--badge-neutral: #f1f1f7;
+
+	--text-neutral: #1b2134;
+
+	--font-size-base: 1rem;
+	--font-size-sm: calc((14 / 16) * 1rem);
+	--font-size-xs: calc((12 / 16) * 1rem);
+
+	--line-height-base: 1.5;
+	--line-height-sm: 1.25;
 }

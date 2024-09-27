@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import "../../../variables.css";
+@import "./Tabs.Badge.css";
+
+:host {
+	font-family: Inter, Arial, Helvetica, sans-serif;
+	font-size: var(--font-size-base);
+}
+
+*,
+*::after,
+*::before {
+	font-family: inherit;
+	box-sizing: border-box;
+}
