@@ -23,17 +23,37 @@
 	display: none;
 }
 
-.tab-list::after {
-	position: absolute;
-	top: calc(var(--target-y) * 1px);
-	left: calc((var(--target-x) * 1px) + 1.25rem);
-	height: calc(var(--target-height) * 1px);
-	width: calc((var(--target-width) * 1px) - 2.5rem);
-	opacity: 1;
-	background: transparent;
-	border-radius: 0;
-	border-bottom: 2px solid currentColor;
-	view-transition-name: target;
+@media (prefers-reduced-motion: no-preference) {
+	@supports (anchor-name: --a) {
+		:host {
+			--timing: 0.25s;
+		}
+
+		.active {
+			background: transparent;
+			transition: all calc(var(--timing) / 2) ease-in-out;
+			transition-delay: calc(var(--timing) / 2);
+		}
+
+		.tab-list::before {
+			position: absolute;
+			content: "";
+			left: anchor(var(--active-tab) left);
+			top: anchor(var(--active-tab) top);
+			height: anchor-size(var(--active-tab) height);
+			width: anchor-size(var(--active-tab) width);
+			opacity: 1;
+			background: transparent;
+			border-radius: 0;
+			view-transition-name: target;
+			background-color: light-dark(
+				var(--color-neutral-100),
+				var(--color-neutral-900)
+			);
+			border-radius: 100vh;
+			transition: all var(--timing) ease-in-out;
+		}
+	}
 }
 
 /* scroll indicator */

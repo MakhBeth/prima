@@ -41,7 +41,7 @@
 		);
 	}
 
-	&.is-active {
+	&:is(.active) {
 		--background-color: light-dark(
 			var(--color-neutral-100),
 			var(--color-neutral-900)

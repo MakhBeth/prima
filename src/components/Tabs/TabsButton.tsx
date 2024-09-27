@@ -18,7 +18,8 @@ export const TabsButton: React.FC<TabsButtonProps> = ({ children, index }) => {
 			aria-controls={`tabpanel-${tabsId}-${index}`}
 			id={`tab-${tabsId}-${index}`}
 			onClick={() => setActiveTab(index)}
-			className={`tabs-button ${activeTab === index ? "is-active" : ""}`}
+			className={`tabs-button ${activeTab === index ? "active" : ""}`}
+			style={{ "anchor-name": `--tab-${index}` } as React.CSSProperties}
 		>
 			{React.Children.map(children, (child) => {
 				if (React.isValidElement(child) && child.type === TabsBadge) {

@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import type { ReactElement } from "react";
+import type { ReactElement, ReactNode } from "react";
 import { TabsList } from "./TabsList";
 import { TabsButton } from "./TabsButton";
 import { TabsPanel } from "./TabsPanel";
@@ -8,13 +8,7 @@ import { TabsContext } from "./TabsContext";
 import styles from "./styles/Tabs.css?inline"; // Import CSS as a string
 import root from "react-shadow";
 
-interface TabsProps {
-	children:
-		| [ReactElement<typeof TabsList>, ReactElement<typeof TabsPanel>]
-		| ReactElement<typeof TabsList | typeof TabsPanel>[];
-}
-
-const Tabs: React.FC<TabsProps> & {
+const Tabs: React.FC<{ children: ReactNode }> & {
 	List: typeof TabsList;
 	Button: typeof TabsButton;
 	Panel: typeof TabsPanel;

@@ -12,15 +12,15 @@
 		padding: var(--spacing-3xs) var(--spacing-2xs);
 	}
 
-	&.neutral {
+	&:is(.neutral) {
 		background-color: var(--badge-neutral);
 	}
 
-	&.negative {
+	&:is(.negative) {
 		background-color: var(--badge-negative);
 	}
 
-	&.positive {
+	&:is(.positive) {
 		background-color: var(--badge-positive);
 	}
 }

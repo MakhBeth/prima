@@ -1,18 +1,18 @@
 import React from "react";
-import type { ReactElement } from "react";
+import type { ReactElement, ReactNode } from "react";
 import { TabsButton } from "./TabsButton";
 import { useTabsContext } from "./TabsContext";
 
 interface TabsListProps {
-	children: ReactElement<typeof TabsButton> | ReactElement<typeof TabsButton>[];
+	children: ReactNode;
 	variant?: "underline" | "pill";
 }
 
 export const TabsList: React.FC<TabsListProps> = ({
 	children,
-	variant = "underline",
+	variant = "pill",
 }) => {
-	const { setActiveTab } = useTabsContext();
+	const { setActiveTab, activeTab } = useTabsContext();
 	const handleKeyDown = React.useCallback(
 		(event: React.KeyboardEvent) => {
 			const tabs = Array.from(
@@ -74,6 +74,11 @@ export const TabsList: React.FC<TabsListProps> = ({
 			role="tablist"
 			onKeyDownCapture={handleKeyDown}
 			aria-orientation="horizontal"
+			style={
+				{
+					"--active-tab": `--tab-${activeTab}`,
+				} as React.CSSProperties
+			}
 		>
 			{validChildren}
 		</div>
