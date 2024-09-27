@@ -1,11 +1,11 @@
 .tabs-badge {
+	border-radius: var(--dimension-2xs);
 	color: var(--text-neutral);
 	display: inline-block;
 	font-size: var(--font-size-xs);
 	font-weight: 700;
-	padding: var(--spacing-4xs) var(--spacing-3xs);
 	line-height: var(--line-height-base);
-	border-radius: var(--dimension-2xs);
+	padding: var(--spacing-4xs) var(--spacing-3xs);
 
 	@media (min-width: 768px) {
 		border-radius: var(--dimension-xs);

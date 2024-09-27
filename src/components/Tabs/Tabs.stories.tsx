@@ -56,7 +56,7 @@ export const WithBadges: Story = {
 
 export const Scrollable: Story = {
 	render: (args) => (
-		<div style={{ width: "300px", overflow: "auto" }}>
+		<div style={{ width: "300px" }}>
 			<Tabs>
 				<Tabs.List variant={args.variant}>
 					<Tabs.Button index={0}>Tab 1</Tabs.Button>

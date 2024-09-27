@@ -1,0 +1,73 @@
+.tabs-button {
+	--background-color: light-dark(transparent, transparent);
+	--border-color: light-dark(var(--color-neutral-700), var(--color-neutral-400));
+
+	align-items: center;
+	background-color: var(--background-color);
+	border-radius: 100vw;
+	border: 1px solid var(--border-color);
+	cursor: pointer;
+	display: inline-flex;
+	font-size: var(--font-size-sm);
+	font-weight: 700;
+	flex: 0 0 auto;
+	gap: var(--spacing-2xs);
+	padding: var(--spacing-xs);
+	position: relative;
+
+	@media (min-width: 768px) {
+		padding: var(--spacing-sm);
+	}
+
+	&:hover {
+		--background-color: light-dark(
+			var(--color-neutral-900),
+			var(--color-neutral-200)
+		);
+		--border-color: light-dark(
+			var(--color-neutral-600),
+			var(--color-neutral-400)
+		);
+	}
+
+	&:active {
+		--background-color: light-dark(
+			var(--color-neutral-800),
+			var(--color-neutral-100)
+		);
+		--border-color: light-dark(
+			var(--color-neutral-700),
+			var(--color-neutral-200)
+		);
+	}
+
+	&.is-active {
+		--background-color: light-dark(
+			var(--color-neutral-100),
+			var(--color-neutral-900)
+		);
+		--border-color: transparent;
+
+		color: light-dark(var(--color-neutral-1000), var(--color-neutral-100));
+
+		&:hover {
+			--background-color: light-dark(
+				var(--color-neutral-300),
+				var(--color-neutral-800)
+			);
+		}
+
+		&:active {
+			--background-color: light-dark(
+				var(--color-neutral-400),
+				var(--color-neutral-700)
+			);
+		}
+	}
+
+	&:focus-visible {
+		outline: 2px solid
+			light-dark(var(--color-neutral-100), var(--color-neutral-900));
+		outline-offset: 2px;
+	}
+}

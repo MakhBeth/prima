@@ -1,0 +1,90 @@
+.tab-list {
+	-webkit-overflow-scrolling: touch;
+	display: flex;
+	flex-wrap: nowrap;
+	gap: var(--spacing-2xs);
+	padding: var(--spacing-3xs);
+	margin: calc(-1 * var(--spacing-3xs));
+	padding-bottom: var(--spacing-lg);
+	max-width: 100%;
+	overflow-scrolling: touch;
+	overflow-x: auto;
+	position: relative;
+	scroll-padding: var(--spacing-2xs);
+	scroll-snap-type: x mandatory;
+	scrollbar-width: none;
+
+	& > * {
+		scroll-snap-align: start;
+	}
+}
+
+.tab-list::-webkit-scrollbar {
+	display: none;
+}
+
+.tab-list::after {
+	position: absolute;
+	top: calc(var(--target-y) * 1px);
+	left: calc((var(--target-x) * 1px) + 1.25rem);
+	height: calc(var(--target-height) * 1px);
+	width: calc((var(--target-width) * 1px) - 2.5rem);
+	opacity: 1;
+	background: transparent;
+	border-radius: 0;
+	border-bottom: 2px solid currentColor;
+	view-transition-name: target;
+}
+
+/* scroll indicator */
+.tab-list {
+	background: linear-gradient(
+			to right,
+			light-dark(var(--color-neutral-1000), var(--color-neutral-100)) 30%,
+			light-dark(
+				rgb(from var(--color-neutral-1000) r g b / 0),
+				rgb(from var(--color-neutral-100) r g b / 0)
+			)
+		)
+		left center,
+		linear-gradient(
+			to left,
+			light-dark(var(--color-neutral-1000), var(--color-neutral-100)) 30%,
+			light-dark(
+				rgb(from var(--color-neutral-1000) r g b / 0),
+				rgb(from var(--color-neutral-100) r g b / 0)
+			)
+		)
+		right center,
+		radial-gradient(
+			farthest-side at 0 50%,
+			light-dark(
+				rgb(from var(--color-neutral-100) r g b / 0.2),
+				rgb(from var(--color-neutral-1000) r g b / 0.2)
+			),
+			light-dark(
+				rgb(from var(--color-neutral-1000) r g b / 0),
+				rgb(from var(--color-neutral-100) r g b / 0)
+			)
+		)
+		left center,
+		radial-gradient(
+			farthest-side at 100% 50%,
+			light-dark(
+				rgb(from var(--color-neutral-100) r g b / 0.2),
+				rgb(from var(--color-neutral-1000) r g b / 0.2)
+			),
+			light-dark(
+				rgb(from var(--color-neutral-1000) r g b / 0),
+				rgb(from var(--color-neutral-100) r g b / 0)
+			)
+		)
+		right center;
+
+	background-repeat: no-repeat;
+	background-size: 40px calc(100% - var(--spacing-sm)), 40px
+		calc(100% - var(--spacing-sm)), 14px calc(100% - var(--spacing-sm)), 14px
+		calc(100% - var(--spacing-sm));
+	background-position: left top, right top, left top, right top;
+	background-attachment: local, local, scroll, scroll;
+}
