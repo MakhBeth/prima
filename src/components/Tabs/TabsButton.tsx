@@ -19,11 +19,14 @@ export const TabsButton: React.FC<TabsButtonProps> = ({ children, index }) => {
 			id={`tab-${tabsId}-${index}`}
 			onClick={() => setActiveTab(index)}
 			className={`tabs-button ${activeTab === index ? "active" : ""}`}
-			style={{ "anchor-name": `--tab-${index}` } as React.CSSProperties}
+			style={{ anchorName: `--tab-${index}` } as React.CSSProperties}
 		>
 			{React.Children.map(children, (child) => {
 				if (React.isValidElement(child) && child.type === TabsBadge) {
 					return child;
+				}
+				if (!child) {
+					return null;
 				}
 				return <span>{child}</span>;
 			})}

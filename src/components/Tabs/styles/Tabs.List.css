@@ -35,69 +35,66 @@
 			transition-delay: calc(var(--timing) / 2);
 		}
 
-		.tab-list::before {
-			position: absolute;
-			content: "";
-			left: anchor(var(--active-tab) left);
-			top: anchor(var(--active-tab) top);
-			height: anchor-size(var(--active-tab) height);
-			width: anchor-size(var(--active-tab) width);
-			opacity: 1;
-			background: transparent;
-			border-radius: 0;
-			view-transition-name: target;
-			background-color: light-dark(
+		.tab-list {
+			--background: light-dark(
 				var(--color-neutral-100),
 				var(--color-neutral-900)
 			);
-			border-radius: 100vh;
-			transition: all var(--timing) ease-in-out;
+
+			&:has(.active:hover) {
+				--background: light-dark(
+					var(--color-neutral-300),
+					var(--color-neutral-700)
+				);
+			}
+
+			&:has(.active:active) {
+				--background: light-dark(
+					var(--color-neutral-400),
+					var(--color-neutral-800)
+				);
+			}
+
+			&::before {
+				background-color: var(--background);
+				border-radius: 0;
+				border-radius: 100vh;
+				content: "";
+				height: anchor-size(var(--active-tab) height);
+				left: anchor(var(--active-tab) left);
+				opacity: 1;
+				position: absolute;
+				top: anchor(var(--active-tab) top);
+				transition: all var(--timing) ease-in-out;
+				view-transition-name: target;
+				width: anchor-size(var(--active-tab) width);
+			}
 		}
 	}
 }
 
-/* scroll indicator */
 .tab-list {
+	--f: var(--color-neutral-1000);
+	--b: var(--color-neutral-100);
+
 	background: linear-gradient(
 			to right,
-			light-dark(var(--color-neutral-1000), var(--color-neutral-100)) 30%,
-			light-dark(
-				rgb(from var(--color-neutral-1000) r g b / 0),
-				rgb(from var(--color-neutral-100) r g b / 0)
-			)
+			light-dark(var(--f), var(--b)) 30%,
+			transparent
 		)
 		left center,
-		linear-gradient(
-			to left,
-			light-dark(var(--color-neutral-1000), var(--color-neutral-100)) 30%,
-			light-dark(
-				rgb(from var(--color-neutral-1000) r g b / 0),
-				rgb(from var(--color-neutral-100) r g b / 0)
-			)
-		)
+		linear-gradient(to left, light-dark(var(--f), var(--b)) 30%, transparent)
 		right center,
 		radial-gradient(
 			farthest-side at 0 50%,
-			light-dark(
-				rgb(from var(--color-neutral-100) r g b / 0.2),
-				rgb(from var(--color-neutral-1000) r g b / 0.2)
-			),
-			light-dark(
-				rgb(from var(--color-neutral-1000) r g b / 0),
-				rgb(from var(--color-neutral-100) r g b / 0)
-			)
+			light-dark(rgb(from var(--b) r g b / 0.2), rgb(from var(--f) r g b / 0.2)),
+			transparent
 		)
 		left center,
 		radial-gradient(
 			farthest-side at 100% 50%,
-			light-dark(
-				rgb(from var(--color-neutral-100) r g b / 0.2),
-				rgb(from var(--color-neutral-1000) r g b / 0.2)
-			),
-			light-dark(
-				rgb(from var(--color-neutral-1000) r g b / 0),
-				rgb(from var(--color-neutral-100) r g b / 0)
-			)
+			light-dark(rgb(from var(--b) r g b / 0.2), rgb(from var(--f) r g b / 0.2)),
+			transparent
 		)
 		right center;
 

@@ -80,7 +80,7 @@ export const WithBadges: Story = {
 
 export const Scrollable: Story = {
 	args: {
-		buttonLabels: ["Tab 1", "Tab 2", "Tab 3", "Tab 4", "Tab 5", "Tab 6"],
+		buttonLabels: ["Tab 1 f", "Tab 2", "Tab 3", "Tab 4", "Tab 5", "Tab 6"],
 		contentLabels: [
 			"Content for Tab 1",
 			"Content for Tab 2",
@@ -94,19 +94,17 @@ export const Scrollable: Story = {
 		<div style={{ width: "300px" }}>
 			<Tabs>
 				<Tabs.List variant={args.variant}>
-					{
-						args.buttonLabels?.map((label, index) => (
-							<Tabs.Button key={label} index={index}>
-								{label}
-								{index === 4 && (
-									<Tabs.Badge variant="positive">positive</Tabs.Badge>
-								)}
-								{index === 5 && (
-									<Tabs.Badge variant="negative">negative</Tabs.Badge>
-								)}
-							</Tabs.Button>
-						)) as ReactElement<FC<unknown>, string>[]
-					}
+					{args.buttonLabels?.map((label, index) => (
+						<Tabs.Button key={label} index={index}>
+							{label}
+							{index === 4 ? (
+								<Tabs.Badge variant="positive">positive</Tabs.Badge>
+							) : null}
+							{index === 5 ? (
+								<Tabs.Badge variant="negative">negative</Tabs.Badge>
+							) : null}
+						</Tabs.Button>
+					))}
 				</Tabs.List>
 				{args.contentLabels?.map((content, index) => (
 					<Tabs.Panel key={content} index={index}>

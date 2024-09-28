@@ -5,22 +5,23 @@
 	font-size: var(--font-size-xs);
 	font-weight: 700;
 	line-height: var(--line-height-base);
+	margin: 1px 0; /* 1px margin to optical align */
 	padding: var(--spacing-4xs) var(--spacing-3xs);
 
 	@media (min-width: 768px) {
 		border-radius: var(--dimension-xs);
+		margin: -1px;
 		padding: var(--spacing-3xs) var(--spacing-2xs);
 	}
-
-	&:is(.neutral) {
+	&:where(.neutral) {
 		background-color: var(--badge-neutral);
 	}
 
-	&:is(.negative) {
+	&:where(.negative) {
 		background-color: var(--badge-negative);
 	}
 
-	&:is(.positive) {
+	&:where(.positive) {
 		background-color: var(--badge-positive);
 	}
 }

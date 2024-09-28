@@ -19,6 +19,14 @@
 		padding: var(--spacing-sm);
 	}
 
+	&:has(.tabs-badge) {
+		padding: var(--spacing-2xs) var(--spacing-xs);
+
+		@media (min-width: 768px) {
+			padding: var(--spacing-xs) var(--spacing-sm);
+		}
+	}
+
 	&:hover {
 		--background-color: light-dark(
 			var(--color-neutral-900),
@@ -41,19 +49,20 @@
 		);
 	}
 
-	&:is(.active) {
+	&:where(.active) {
 		--background-color: light-dark(
 			var(--color-neutral-100),
 			var(--color-neutral-900)
 		);
 		--border-color: transparent;
 
+		border-color: transparent;
 		color: light-dark(var(--color-neutral-1000), var(--color-neutral-100));
 
 		&:hover {
 			--background-color: light-dark(
 				var(--color-neutral-300),
-				var(--color-neutral-800)
+				var(--color-neutral-700)
 			);
 		}
 
