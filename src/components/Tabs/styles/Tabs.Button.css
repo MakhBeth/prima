@@ -15,14 +15,14 @@
 	padding: var(--spacing-xs);
 	position: relative;
 
-	@media (min-width: 768px) {
+	@media screen and (min-width: 768px) {
 		padding: var(--spacing-sm);
 	}
 
 	&:has(.tabs-badge) {
 		padding: var(--spacing-2xs) var(--spacing-xs);
 
-		@media (min-width: 768px) {
+		@media screen and (min-width: 768px) {
 			padding: var(--spacing-xs) var(--spacing-sm);
 		}
 	}
@@ -78,5 +78,42 @@
 		outline: 2px solid
 			light-dark(var(--color-neutral-100), var(--color-neutral-900));
 		outline-offset: 2px;
+	}
+
+	.underline & {
+		background-color: transparent;
+		border-color: transparent;
+		border-radius: var(--dimension-4xs);
+		color: inherit;
+		padding-left: 0;
+		padding-right: 0;
+		position: relative;
+		position: relative;
+
+		&:is(:hover, :active) {
+			--background-color: light-dark(
+				var(--color-neutral-600),
+				var(--color-neutral-400)
+			);
+		}
+
+		&.active {
+			--background-color: light-dark(
+				var(--color-neutral-100),
+				var(--color-neutral-900)
+			);
+		}
+
+		&::after {
+			content: "";
+			background-color: var(--background-color);
+			border-radius: var(--dimension-4xs);
+			bottom: 0;
+			height: 3px;
+			left: 0;
+			position: absolute;
+			transition: background-color 150ms ease-in-out;
+			width: 100%;
+		}
 	}
 }

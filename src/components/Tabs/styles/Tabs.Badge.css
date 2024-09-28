@@ -8,7 +8,7 @@
 	margin: 1px 0; /* 1px margin to optical align */
 	padding: var(--spacing-4xs) var(--spacing-3xs);
 
-	@media (min-width: 768px) {
+	@media screen and (min-width: 768px) {
 		border-radius: var(--dimension-xs);
 		margin: -1px;
 		padding: var(--spacing-3xs) var(--spacing-2xs);

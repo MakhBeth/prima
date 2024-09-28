@@ -17,12 +17,25 @@
 	& > * {
 		scroll-snap-align: start;
 	}
+
+	@media screen and (min-width: 768px) {
+		gap: var(--spacing-xs);
+	}
+
+	&:where(.underline) {
+		gap: var(--spacing-lg);
+
+		@media screen and (min-width: 768px) {
+			gap: var(--spacing-xl);
+		}
+	}
 }
 
 .tab-list::-webkit-scrollbar {
 	display: none;
 }
 
+/* animation */
 @media (prefers-reduced-motion: no-preference) {
 	@supports (anchor-name: --a) {
 		:host {
@@ -33,6 +46,11 @@
 			background: transparent;
 			transition: all calc(var(--timing) / 2) ease-in-out;
 			transition-delay: calc(var(--timing) / 2);
+
+			.underline &::after {
+				opacity: 0;
+				transition: all var(--timing) ease-in-out;
+			}
 		}
 
 		.tab-list {
@@ -69,10 +87,17 @@
 				view-transition-name: target;
 				width: anchor-size(var(--active-tab) width);
 			}
+
+			&.underline::before {
+				height: 3px;
+				top: calc(anchor(var(--active-tab) bottom) - 4px);
+				border-radius: var(--dimension-4xs);
+			}
 		}
 	}
 }
 
+/* scrollbar indicator */
 .tab-list {
 	--f: var(--color-neutral-1000);
 	--b: var(--color-neutral-100);
