@@ -11,6 +11,7 @@ export const TabsPanel: React.FC<{
 			aria-labelledby={`tab-${tabsId}-${index}`}
 			hidden={activeTab !== index}
 			role="tabpanel"
+			className="tabs-panel"
 		>
 			{children}
 		</div>

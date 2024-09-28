@@ -3,6 +3,7 @@
 @import "./Tabs.Badge.css";
 @import "./Tabs.Button.css";
 @import "./Tabs.List.css";
+@import "./Tabs.Panel.css";
 
 :host {
 	font-family: Inter, Arial, Helvetica, sans-serif;

@@ -64,4 +64,9 @@
 	);
 
 	--text-neutral: light-dark(var(--color-neutral-100), var(--color-neutral-900));
+
+	--timing: 1s;
+	@media screen and (prefers-reduced-motion) {
+		--timing: 0s;
+	}
 }

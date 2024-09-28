@@ -39,17 +39,17 @@
 @media (prefers-reduced-motion: no-preference) {
 	@supports (anchor-name: --a) {
 		:host {
-			--timing: 0.25s;
+			--animation-timing: calc(var(--timing) * 0.25);
 		}
 
 		.active {
 			background: transparent;
-			transition: all calc(var(--timing) / 2) ease-in-out;
-			transition-delay: calc(var(--timing) / 2);
+			transition: all calc(var(--animation-timing) / 2) ease-in-out;
+			transition-delay: calc(var(--animation-timing) / 2);
 
 			.underline &::after {
 				opacity: 0;
-				transition: all var(--timing) ease-in-out;
+				transition: all var(--animation-timing) ease-in-out;
 			}
 		}
 
@@ -83,7 +83,7 @@
 				opacity: 1;
 				position: absolute;
 				top: anchor(var(--active-tab) top);
-				transition: all var(--timing) ease-in-out;
+				transition: all var(--animation-timing) ease-in-out;
 				view-transition-name: target;
 				width: anchor-size(var(--active-tab) width);
 			}

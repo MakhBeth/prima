@@ -1,6 +1,23 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Tabs } from "./";
-import type { FC, ReactElement } from "react";
+import type { FC, ReactElement, ReactNode } from "react";
+
+const Skeleton: FC<{ children?: ReactNode }> = ({ children }) => (
+	<div
+		style={{
+			background: "light-dark(rgba(0,0,0,0.05), rgba(255,255,255, 0.1))",
+			width: "max(300px, 50%)",
+			alignContent: "center",
+			padding: "1em",
+			textAlign: "center",
+			minHeight: 60,
+			marginBottom: 15,
+			borderRadius: 8,
+		}}
+	>
+		{children}
+	</div>
+);
 
 interface TabsStoryProps {
 	variant?: "underline" | "pill";
@@ -49,7 +66,10 @@ export const Default: Story = {
 			{
 				args.contentLabels?.map((content, index) => (
 					<Tabs.Panel key={content} index={index}>
-						{content}
+						<Skeleton>{content}</Skeleton>
+						<Skeleton />
+						<Skeleton />
+						<Skeleton />
 					</Tabs.Panel>
 				)) as ReactElement<FC<unknown>, string>[]
 			}
@@ -71,9 +91,24 @@ export const WithBadges: Story = {
 					Tab 3<Tabs.Badge variant="positive">positive</Tabs.Badge>
 				</Tabs.Button>
 			</Tabs.List>
-			<Tabs.Panel index={0}>Content for Tab 1</Tabs.Panel>
-			<Tabs.Panel index={1}>Content for Tab 2</Tabs.Panel>
-			<Tabs.Panel index={2}>Content for Tab 3</Tabs.Panel>
+			<Tabs.Panel index={0}>
+				<Skeleton>Content for Tab 1</Skeleton>
+				<Skeleton />
+				<Skeleton />
+				<Skeleton />
+			</Tabs.Panel>
+			<Tabs.Panel index={1}>
+				<Skeleton>Content for Tab 2</Skeleton>
+				<Skeleton />
+				<Skeleton />
+				<Skeleton />
+			</Tabs.Panel>
+			<Tabs.Panel index={2}>
+				<Skeleton>Content for Tab 3</Skeleton>
+				<Skeleton />
+				<Skeleton />
+				<Skeleton />
+			</Tabs.Panel>
 		</Tabs>
 	),
 };
@@ -108,7 +143,10 @@ export const Scrollable: Story = {
 				</Tabs.List>
 				{args.contentLabels?.map((content, index) => (
 					<Tabs.Panel key={content} index={index}>
-						{content}
+						<Skeleton>{content}</Skeleton>
+						<Skeleton />
+						<Skeleton />
+						<Skeleton />
 					</Tabs.Panel>
 				))}
 			</Tabs>
